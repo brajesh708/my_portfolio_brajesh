@@ -5,5 +5,21 @@
 }
 #topnav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
+    margin: 20px;
+}
+
+#nav a{
+    margin: 20px;
+    text-decoration: none;
+
+}
+
+#nav a:hover{
+    color: red;
+}
+#port{
+    font-size: 28px;
+    color: darkgoldenrod;
+    font-weight: 700;
 }
