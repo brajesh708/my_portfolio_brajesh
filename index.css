@@ -1,0 +1,3288 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --body-color: black;
+  --shadow-color: rgba(0, 183, 255);
+  --text-color: aliceblue;
+  --background-color: aliceblue;
+}
+
+body.dark-mode {
+  --background-color: black;
+  --text-color: aliceblue;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: var(--background-color);
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 10px 10px 10px var(--background-color);
+}
+
+#logo {
+  position: relative;
+  padding-left: 10px;
+  font-size: 32px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+#navbar {
+  margin-right: 10px;
+}
+
+#navbar a {
+  display: inline-block;
+  font-size: 25px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s*var(--i));
+}
+
+#navbar a:hover,
+#navbar a.active {
+  color: var(--shadow-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
+}
+
+#header .logo:hover {
+  cursor: pointer;
+  box-shadow: 0 0 25px var(--shadow-color), 0 0 25px var(--shadow-color);
+}
+
+/* Section: Home */
+#home {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+
+#home-content {
+  flex-direction: row-reverse;
+  max-width: 600px;
+}
+
+#home-content h3 {
+  color: var(--text-color);
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+
+#home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .7s;
+}
+
+#home-content h3 span {
+  color: var(--shadow-color);
+
+}
+
+#home-content h1 {
+  color: var(--text-color);
+  font-size: 60px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+#home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+}
+
+#home-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 30px 15px 30px 0;
+  background: transparent;
+  border: 2px solid var(--shadow-color);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--shadow-color);
+  text-decoration: none;
+  transition: .5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s*var(--i));
+}
+
+#home-icons a:hover {
+  background: var(--shadow-color);
+  color: var(--body-color);
+  box-shadow: 0 0 20px var(--shadow-color);
+}
+
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--shadow-color);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--body-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 1000;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow: 0 0 5px var(--shadow-color),
+      0 0 25px var(--shadow-color);
+}
+
+.btn-box:hover {
+  box-shadow: 0 0 25px var(--shadow-color), 0 0 25px var(--shadow-color);
+}
+
+#profile-img {
+  display: inline-flex;
+  width: 500px;
+  height: 500px;
+}
+
+/* Section: About */
+#about {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#about-img img {
+  margin-left: 100px;
+  height: 500px;
+  width: 500px;
+}
+
+#about-text h2 {
+  padding-top: 40px;
+  color: var(--text-color);
+  font-size: 60px;
+  animation: slideRight 1s ease forwards;
+}
+
+#about-text h2 span {
+  color: var(--shadow-color);
+}
+
+#about-text p {
+  padding-top: 1rem;
+  color: var(--text-color);
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+}
+
+.container {
+  width: 100%;
+  /* padding: 70px 150px; */
+}
+
+/* Section: Qualifications */
+#qualifications h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 50px;
+  animation: slideRight 1s ease forwards;
+}
+
+#qualifications h1 span {
+  color: var(--shadow-color);
+}
+
+#qualifications-list {
+  font-size: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+#qualifications-list div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px var(--shadow-color),
+      1px 1px 40px var(--shadow-color);
+}
+
+#qualifications-list div h2 {
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 500px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#qualifications-list div h4 {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#qualifications-list div p {
+  font-size: 1.3em;
+  color: var(--text-color);
+}
+
+#qualifications-list div a {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+#qualifications-list div:hover {
+  transform: scale(1.1);
+}
+
+.learn-more {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--shadow-color);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--body-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow: 0 0 5px var(--shadow-color),
+      0 0 25px var(--shadow-color);
+}
+
+.learn-more:hover {
+  box-shadow: 0 0 25px var(--shadow-color),
+      0 0 25px var(--shadow-color);
+}
+
+/* Section: Skills */
+#skills h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 50px;
+  animation: slideRight 1s ease forwards;
+}
+
+#skills h1 span {
+  color: var(--shadow-color);
+}
+
+#skills-list {
+  font-size: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+#skills-list div {
+  display: grid;
+  background: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px var(--shadow-color),
+      1px 1px 40px var(--shadow-color);
+}
+
+#skills-list i {
+  text-align: center;
+  font-size: 5rem;
+  color: var(--shadow-color);
+  animation: slideBottom 1s ease forwards;
+}
+
+#skills-list div h2 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500px;
+  margin-bottom: 15px;
+}
+
+#skills-list div p {
+  font-size: 1.3em;
+  color: var(--text-color);
+}
+
+#skills-list div a {
+
+  width: 50%;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#skills-list div:hover {
+  transform: scale(1.1);
+}
+
+/* Section: Tech Stack */
+.tech {
+  width: 100%;
+}
+
+#tech h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 50px;
+  animation: slideRight 1s ease forwards;
+}
+
+#tech h1 span {
+  color: var(--shadow-color);
+}
+
+#tech-list {
+  display: flex;
+}
+
+#tech-list div {
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+  background: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px var(--shadow-color),
+      1px 1px 40px var(--shadow-color);
+}
+
+#tech-list div i {
+  color: var(--shadow-color);
+  font-size: 5rem;
+  transition: .3s;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: calc(.2s*var(--i));
+
+
+}
+
+#tech-list div i:hover {
+  box-shadow: 1px 1px 10px var(--shadow-color),
+      1px 1px 20px var(--shadow-color);
+  border-radius: 20%;
+
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--body-color);
+  box-shadow: 1px 1px 20px var(--shadow-color),
+      1px 1px 40px var(--shadow-color);
+  color: var(--shadow-color);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.bx:hover .popup {
+  display: block;
+}
+
+/* Section: Projects */
+#projects h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 50px;
+  animation: slideRight 1s ease forwards;
+}
+
+#projects h1 span {
+  color: var(--shadow-color);
+}
+
+#projects-list {
+  font-size: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+#projects-list div {
+  display: grid;
+  background: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px var(--shadow-color),
+      1px 1px 40px var(--shadow-color);
+}
+
+#projects-list div h2 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500px;
+  margin-bottom: 15px;
+}
+
+#projects-list div p {
+  font-size: 1.3em;
+  color: var(--text-color);
+}
+
+#projects-list div a {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+#projects-list div:hover {
+  transform: scale(1.1);
+}
+
+/* Section: Certifications */
+.certifications {
+  width: 100%;
+}
+
+#certifications h1 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 50px;
+  animation: slideRight 1s ease forwards;
+}
+
+#certifications h1 span {
+  color: var(--shadow-color);
+}
+
+#certifications-list {
+  font-size: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+#certifications-list div {
+  display: grid;
+  background: transparent;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 13px;
+  border-right: 10px;
+  border-radius: 20px;
+  transition: background 0.5s, transform 0.5s;
+  box-shadow: 1px 1px 20px var(--shadow-color),
+      1px 1px 40px var(--shadow-color);
+}
+
+#certifications-list i {
+  text-align: center;
+  font-size: 5rem;
+  color: var(--shadow-color);
+  animation: slideBottom 1s ease forwards;
+}
+
+#certifications-list div h2 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500px;
+  margin-bottom: 15px;
+}
+
+#certifications-list div p {
+  font-size: 1.3em;
+  color: var(--text-color);
+}
+
+#certifications-list div a {
+  width: 50%;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#certifications-list div:hover {
+  transform: scale(1.1);
+}
+
+/* Section: Contact */
+.contact {
+  width: 100%;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 50px;
+  animation: slideRight 1s ease forwards;
+}
+
+#contact span {
+  color: var(--shadow-color);
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#form input {
+  outline: none;
+  color: var(--body-color);
+  background-color: var(--text-color);
+  padding: 5px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+#form textarea {
+  outline: none;
+  padding: 5px;
+  background-color: var(--text-color);
+  border-radius: 10px;
+  width: 50%;
+}
+
+::placeholder {
+  font-weight: 150;
+  color: var(--body-color);
+}
+
+#form .captcha-container {
+  text-align: center;
+}
+
+#form #submit {
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 550;
+  background-color: var(--shadow-color);
+  color: var(--body-color);
+  box-shadow: 0 0 5px var(--shadow-color),
+      0 0 25px var(--shadow-color);
+  animation: slideTop 1s ease forwards;
+}
+
+#form #submit:hover {
+  cursor: pointer;
+  box-shadow: 0 0 25px var(--shadow-color), 0 0 25px var(--shadow-color);
+}
+
+/* Footer */
+#footer {
+  color: var(--body-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 4%;
+  width: 100%;
+  background: var(--shadow-color);
+  font-weight: 300;
+}
+
+#go-to-top {
+  bottom: 20px;
+}
+
+#go-to-top i {
+  color: var(--body-color);
+  background-color: var(--shadow-color);
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid var(--body-color);
+  border-radius: 0.5rem;
+}
+
+#go-to-top i:hover {
+  cursor: pointer;
+  box-shadow: 0 0 25px var(--shadow-color), 0 0 25px var(--shadow-color);
+}
+
+/* KeyFrames */
+@keyframes slideTop {
+  0% {
+      transform: translateY(100px);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+      transform: translateY(-100px);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateY(0px);
+      opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+      transform: translateX(100px);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (min-width: 1440px) {
+  #profile-img {
+      width: 500px;
+      height: auto;
+  }
+
+  #about-img img {
+      width: 500px;
+      height: auto;
+      margin: 0;
+  }
+
+  #home-content {
+      max-width: 519px;
+  }
+
+  #home {
+      flex-direction: row-reverse;
+  }
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.8rem;
+  }
+
+  #menu-icon {
+      font-size: 2.5rem;
+  }
+
+  #navbar a {
+      font-size: 1.3rem;
+  }
+
+  #home {
+      padding-top: 2rem;
+  }
+
+  #home-content {
+      margin: auto;
+  }
+
+  #home-content h3 {
+      font-size: 2rem;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2.5rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+
+      margin-top: 2rem;
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 2rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin: 0 2rem;
+  }
+
+  #tech-list div {
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+      margin: 10px;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 50%;
+  }
+
+  #form textarea {
+      width: 50%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 1rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1274px) and (max-width:1440px) {
+
+  #profile-img {
+      width: 500px;
+      height: auto;
+  }
+
+  #about-img img {
+      width: 500px;
+      height: auto;
+      margin: 0;
+  }
+
+  #home-content {
+      max-width: 519px;
+  }
+
+  #home {
+      flex-direction: row-reverse;
+  }
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.8rem;
+  }
+
+  #menu-icon {
+      font-size: 2.5rem;
+  }
+
+  #navbar a {
+      font-size: 1.3rem;
+  }
+
+  #home {
+      padding-top: 2rem;
+  }
+
+  #home-content {
+      margin: auto;
+  }
+
+  #home-content h3 {
+      font-size: 2rem;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2.5rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+
+      margin-top: 2rem;
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 2rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin: 0 2rem;
+  }
+
+  #tech-list div {
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+      margin: 10px;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 50%;
+  }
+
+  #form textarea {
+      width: 50%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 1rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width:1274px) {
+
+  #profile-img {
+      width: 350px;
+      height: auto;
+  }
+
+  #about-img img {
+      width: 350px;
+      height: auto;
+      margin: 0;
+  }
+
+  #home-content {
+      max-width: 419px;
+  }
+
+  #home {
+      flex-direction: row-reverse;
+  }
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.8rem;
+  }
+
+  #menu-icon {
+      font-size: 2.5rem;
+  }
+
+  #navbar a {
+      font-size: 1.3rem;
+  }
+
+  #home {
+      padding-top: 2rem;
+  }
+
+  #home-content {
+      margin: auto;
+  }
+
+  #home-content h3 {
+      font-size: 1.8rem;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2.2rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+
+      margin-top: 2rem;
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 2rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin: 0 2rem;
+  }
+
+  #tech-list div {
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+      margin: 10px;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      margin: 10px;
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 50%;
+  }
+
+  #form textarea {
+      width: 50%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 1rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 962px) and (max-width:1024px) {
+  #profile-img {
+      width: 250px;
+      height: auto;
+  }
+
+  #about-img img {
+      width: 250px;
+      height: auto;
+      margin: 0;
+  }
+
+  #home-content {
+      max-width: 519px;
+  }
+
+  #home {
+      flex-direction: row-reverse;
+  }
+
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.8rem;
+  }
+
+  #menu-icon {
+      font-size: 2.5rem;
+  }
+
+  #navbar a {
+      font-size: 1.3rem;
+  }
+
+  #home {
+      padding-top: 2rem;
+  }
+
+  #home-content {
+      margin: auto;
+  }
+
+  #home-content h3 {
+      font-size: 1.8rem;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+
+      margin-top: 2rem;
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 2rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin: 0 2rem;
+  }
+
+  #tech-list div {
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 50%;
+  }
+
+  #form textarea {
+      width: 50%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 1rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width:962px) {
+  #profile-img {
+      width: 260px;
+      height: auto;
+  }
+
+  #about-img img {
+      width: 260px;
+      height: auto;
+      margin: 0;
+  }
+
+  #home-content {
+      margin: auto;
+      max-width: 319px;
+  }
+
+  #home {
+      flex-direction: row-reverse;
+  }
+
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.8rem;
+  }
+
+  #menu-icon {
+      font-size: 2.5rem;
+  }
+
+  #navbar a {
+      font-size: 1.3rem;
+  }
+
+  #home {
+      padding-top: 2rem;
+  }
+
+  #home-content {
+      margin: auto;
+  }
+
+  #home-content h3 {
+      font-size: 1.8rem;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+
+      margin-top: 2rem;
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 2rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin: 0 2rem;
+  }
+
+  #tech-list div {
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 50%;
+  }
+
+  #form textarea {
+      width: 50%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 1rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  #qualifications-list div:hover {
+      transform: scale(1);
+  }
+
+  #skills-list div:hover {
+      transform: scale(1);
+  }
+
+  #projects-list div:hover {
+      transform: scale(1);
+  }
+
+  #certifications-list div:hover {
+      transform: scale(1);
+  }
+
+  #menu-icon {
+      display: block;
+  }
+
+  #navbar.active {
+      display: block;
+  }
+
+  #navbar a {
+      display: block;
+      font-size: 0.5rem;
+      margin: 0.5rem 0;
+  }
+
+  #navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0.5rem 3%;
+      background: var(--background-color);
+      border-top: .1rem solid rgba(0, 0, 0, .2);
+      box-shadow: .5rem 0 1rem rgba(0, 0, 0, .2);
+      display: none;
+  }
+
+}
+
+@media only screen and (min-width: 426px) and (max-width:768px) {
+  #profile-img {
+      width: 300px;
+      height: auto;
+      margin: auto;
+  }
+
+  #about-img img {
+      width: 300px;
+      height: auto;
+      margin: 0;
+  }
+
+  img {
+      margin: auto;
+  }
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.8rem;
+  }
+
+  #menu-icon {
+      font-size: 2.5rem;
+  }
+
+  #navbar a {
+      font-size: 1.3rem;
+  }
+
+  #home {
+      height: auto;
+      padding-top: 2rem;
+  }
+
+  #home-content {
+      margin: auto;
+  }
+
+  #home-content h3 {
+      font-size: 2rem;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2.5rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+      margin-top: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 2rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 5px;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3.2rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 5px;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin: 0 2rem;
+  }
+
+  #tech-list div {
+      margin: 5px;
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 5px;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin: 0 2rem;
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      padding: 1.8rem;
+      margin: 5px;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 80%;
+  }
+
+  #form textarea {
+      width: 80%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 0.9rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width:426px) {
+  #profile-img {
+      width: 220px;
+      height: auto;
+      margin: auto;
+  }
+
+  #about-img img {
+      width: 220px;
+      height: auto;
+      margin: 0;
+  }
+
+  img {
+      margin: auto;
+  }
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.5rem;
+  }
+
+  #menu-icon {
+      font-size: 2.3rem;
+  }
+
+  #navbar a {
+      font-size: 1rem;
+  }
+
+  #home {
+      height: auto;
+      padding-top: 2rem;
+  }
+
+  #home-content h3 {
+      font-size: 19px;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2.3rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 1rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #qualifications-list {
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 0.8rem 2.4rem;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #skills-list {
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 0.8rem 2.4rem;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 4rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #tech-list {
+      margin-top: 1rem;
+  }
+
+  #tech-list div {
+      margin: 0.8rem 2.4rem;
+      padding: 1.8rem;
+  }
+
+  #tech-list div i {
+      font-size: 4rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #projects-list {
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 0.8rem 2.4rem;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2.4rem;
+  }
+
+  #certifications-list {
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      margin: 0.8rem 2.4rem;
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.7rem;
+  }
+
+  #certifications-list i {
+      font-size: 4.2rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.6rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 80%;
+  }
+
+  #form textarea {
+      width: 80%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      font-size: 0.9rem;
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.9rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width:375px) {
+  #profile-img {
+      width: 200px;
+      height: auto;
+      margin: auto;
+  }
+
+  #about-img img {
+      width: 200px;
+      height: auto;
+      margin: 0;
+
+  }
+
+  img {
+      margin: auto;
+  }
+
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.5rem;
+  }
+
+  #menu-icon {
+      font-size: 2rem;
+  }
+
+  #navbar a {
+      font-size: 1rem;
+  }
+
+  #home {
+      height: auto;
+      padding-top: 2rem;
+  }
+
+  #home-content h3 {
+      font-size: 19px;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      margin-top: 0.5rem;
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 1rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      padding: 1.3rem;
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #qualifications-list {
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #skills-list {
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list div a {
+      padding: 0.4rem;
+  }
+
+  #skills-list i {
+      font-size: 3.5rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #tech-list {
+      margin-top: 1rem;
+  }
+
+  #tech-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #tech-list div i {
+      font-size: 3.5rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #projects-list {
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #certifications-list {
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #certifications-list i {
+      font-size: 4rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 80%;
+  }
+
+  #form textarea {
+      width: 80%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 0.8rem;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #profile-img {
+      width: 180px;
+      height: auto;
+      margin: auto;
+  }
+
+  #about-img img {
+      width: 180px;
+      height: auto;
+      margin: 0;
+
+  }
+
+  img {
+      margin: auto;
+  }
+
+
+  #header {
+      padding: 4px;
+  }
+
+  #logo {
+      font-size: 1.5rem;
+  }
+
+  #menu-icon {
+      font-size: 2rem;
+  }
+
+  #navbar a {
+      font-size: 1rem;
+  }
+
+  #home {
+      padding-top: 2rem;
+  }
+
+  #home-content h3 {
+      font-size: 19px;
+  }
+
+  #home-content h3:nth-of-type(2) {
+      margin-bottom: 1rem;
+  }
+
+  #home-content h1 {
+      font-size: 2rem;
+  }
+
+  #home-content p {
+      font-size: 1rem;
+  }
+
+  #home-icons a {
+      width: 35px;
+      height: 35px;
+      margin: 0.5rem;
+      font-size: 20px;
+  }
+
+  .btn-box {
+      padding: 9px 26px;
+      font-size: 12px;
+  }
+
+  #about {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  #about-img {
+      text-align: center;
+  }
+
+  #about-text p {
+      text-align: justify;
+      margin: 0.5rem;
+      padding: 0;
+      font-size: 1rem;
+  }
+
+  #about-text h2 {
+      text-align: center;
+      font-size: 2rem;
+      padding: 0;
+  }
+
+  #qualifications h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #qualifications-list {
+      margin-top: 1rem;
+  }
+
+  #qualifications-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #qualifications-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #qualifications-list div h4 {
+      font-size: 1rem;
+  }
+
+  #qualifications-list div p {
+      font-size: 1rem;
+  }
+
+  #skills h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #skills-list {
+      margin-top: 1rem;
+  }
+
+  #skills-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #skills-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #skills-list div p {
+      font-size: 1rem;
+  }
+
+  #skills-list i {
+      font-size: 3rem;
+  }
+
+  .learn-more {
+      padding: 2px 17px;
+  }
+
+  #tech h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #tech-list {
+      margin-top: 1rem;
+  }
+
+  #tech-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #tech-list div i {
+      font-size: 3.5rem;
+  }
+
+  #projects h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #projects-list {
+      margin-top: 1rem;
+  }
+
+  #projects-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #projects-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #projects-list div p {
+      font-size: 1rem;
+  }
+
+  #projects-list .learn-more {
+      padding: 5px;
+  }
+
+  #certifications h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
+  }
+
+  #certifications-list {
+      margin-top: 1rem;
+  }
+
+  #certifications-list div {
+      margin: 0.8rem 2rem;
+      padding: 1.8rem;
+  }
+
+  #certifications-list div h2 {
+      font-size: 1.5rem;
+  }
+
+  #certifications-list i {
+      font-size: 4rem;
+  }
+
+  #certifications-list div p {
+      font-size: 1rem;
+  }
+
+  #certifications-list .learn-more {
+      padding: 6px;
+  }
+
+  #contact h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+  }
+
+  #form {
+      margin-bottom: 2rem;
+      gap: 0.8rem;
+  }
+
+  #form input {
+      width: 80%;
+  }
+
+  #form textarea {
+      width: 80%;
+  }
+
+  ::placeholder {
+      font-size: 0.8rem;
+  }
+
+  #form #submit {
+      padding: 5px;
+  }
+
+  #footer {
+      padding: 0.5rem 2%;
+  }
+
+  #footer p {
+      font-size: 12px;
+  }
+
+  #go-to-top i {
+      font-size: 15px;
+  }
+}
+/* General styles */
+/* General styles */
+:root {
+  --background-color: aliceblue;
+  --text-color: black;
+  /* --shadow-color: rgba(0, 0, 0, 0.2); */
+}
+
+body.dark-mode {
+  --background-color: black;
+  --text-color: aliceblue;
+  --shadow-color: cyan;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#menu-container {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  #menu-container {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+  }
+
+  .theme-toggle-btn {
+      order: 1;
+      margin-left: 0;
+  }
+
+  #menu-icon {
+      order: 2;
+  }
+
+  nav#navbar {
+      flex-direction: column;
+      display: none;
+  }
+
+  nav#navbar.active {
+      display: flex;
+  }
+}
